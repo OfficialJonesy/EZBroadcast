@@ -1,0 +1,14 @@
+main: com.officialjonesy.forloops.ForLoops
+name: Broadcaster
+version: 1.0.0
+author: OfficialJonesy
+
+
+
+
+commands:
+     broadcast:
+        description: Broadcast a message to the server!
+        usage: /<command> <message>
+        permission: broadcast.use
+        aliases: [ebroadcast, bc, broadc, bcast]
