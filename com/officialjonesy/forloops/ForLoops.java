@@ -40,7 +40,7 @@ public class ForLoops extends JavaPlugin implements Listener {
 					"&6Server&8").replace("SERVER", "&6Server");
 			getLogger().info("Raw Broadcast: " + sb.toString());
 			for (Player online : Bukkit.getOnlinePlayers()) {
-				online.sendMessage(tl('&', "&9(&8PhoenixCraft: " + name + "&9)&b " + message));
+				online.sendMessage(tl('&', "&9(&8[server]: " + name + "&9)&b " + message));
 			}
 
 			return true;
