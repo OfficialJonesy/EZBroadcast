@@ -36,11 +36,12 @@ public class ForLoops extends JavaPlugin implements Listener {
 
 			// after collecting args!
 			String message = sb.toString();
-			String name = sender.getName().replace("OfficialJonesy", "&4&lOwner &bOfficialJonesy&8").replace("CONSOLE",
-					"&6Server&8").replace("SERVER", "&6Server");
+			String name = sender.getName();
 			getLogger().info("Raw Broadcast: " + sb.toString());
 			for (Player online : Bukkit.getOnlinePlayers()) {
-				online.sendMessage(tl('&', "&9(&8[server]: " + name + "&9)&b " + message));
+				online.sendMessage(tl('&',
+						getConfig().getString("prefix").replace("{server}", getConfig().getString("server-name"))
+								.replace("{player}", sender.getName()) + "&b " + message));
 			}
 
 			return true;
