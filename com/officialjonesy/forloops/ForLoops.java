@@ -11,9 +11,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
 @SuppressWarnings("all")
-public class ForLoops extends JavaPlugin implements Listener {
+public class ForLoops extends JavaPlugin {
 	public void onEnable() {
-		getServer().getPluginManager().registerEvents((Listener) this, (Plugin) this);
 		saveDefaultConfig();
 
 	}
@@ -41,7 +40,7 @@ public class ForLoops extends JavaPlugin implements Listener {
 			for (Player online : Bukkit.getOnlinePlayers()) {
 				online.sendMessage(tl('&',
 						getConfig().getString("prefix").replace("{server}", getConfig().getString("server-name"))
-								.replace("{player}", sender.getName()) + "&b " + message));
+								.replace("{player}", online.getName()).replace("{sender}", sender.getName()) + "&b " + message));
 			}
 
 			return true;
